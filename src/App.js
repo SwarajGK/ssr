@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
-// import "./App.css";
 
 const Button = styled.button`
   color: hotpink;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between;
 `;
 
 function App(props) {
@@ -15,28 +21,18 @@ function App(props) {
     setCounter((counter) => counter - 1);
   };
   return (
-    <div className="App">
+    <div>
       <header>
-        <p>My name is {props.product}</p>
-        <div onClick={inc}>
-          <Button>Click me to inc</Button>
-        </div>
-        <div onClick={desc}>
-          <Button>Click me to desc</Button>
-        </div>
-
-        <p>{counter}</p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3>This is {props.product}</h3>
+        <ButtonWrapper>
+          <div onClick={inc}>
+            <Button>Click me to inc</Button>
+          </div>
+          <p>{counter}</p>
+          <div onClick={desc}>
+            <Button>Click me to desc</Button>
+          </div>
+        </ButtonWrapper>
       </header>
     </div>
   );
