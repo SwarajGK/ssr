@@ -24,6 +24,7 @@ function App(props) {
     <div>
       <header>
         <h3>This is {props.product}</h3>
+        {props.product === "live" && <h3>This content is for live only</h3>}
         <ButtonWrapper>
           <div onClick={inc}>
             <Button>Click me to inc</Button>
